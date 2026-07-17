@@ -1,5 +1,8 @@
 # TIPE (2022) — Reconstruction de profondeur par vision stéréoscopique
 
+> Dépôt d'archive : code d'un TIPE de classe préparatoire (2022), publié tel quel à titre de
+> référence. Non maintenu activement.
+
 TIPE (Travail d'Initiative Personnelle Encadrée) sur la vision par ordinateur : comment
 reconstruire l'information de profondeur d'une scène à partir de deux photographies prises sous
 des angles différents (vision stéréoscopique), en s'appuyant sur la géométrie épipolaire.
