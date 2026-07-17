@@ -1,4 +1,4 @@
-# TIPE (2022) — Reconstruction de profondeur par vision stéréoscopique
+# TIPE (2022) — Reconstruction de profondeur par stereo vision
 
 > Dépôt d'archive : code d'un TIPE de classe préparatoire (2022), publié tel quel à titre de
 > référence. Non maintenu activement.
@@ -8,8 +8,7 @@ reconstruire l'information de profondeur d'une scène à partir de deux photogra
 des angles différents (vision stéréoscopique), en s'appuyant sur la géométrie épipolaire.
 
 Notions mobilisées : géométrie épipolaire, algorithme à 8 points, décomposition en valeurs
-singulières (SVD), RANSAC, rectification d'images, mise en correspondance de blocs (block
-matching).
+singulières (SVD), RANSAC, rectification d'images, block matching.
 
 ## Pipeline
 
