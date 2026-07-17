@@ -77,10 +77,12 @@ Paire d'images rectifiées :
 
 Carte de disparité : implémentation maison (SAD) contre `cv2.StereoBM`. L'implémentation maison
 retrouve la silhouette de la plante mais reste bruitée et peu contrastée ; `StereoBM` (filtrage et
-gestion des occlusions plus avancés) donne une carte nettement plus propre :
+gestion des occlusions plus avancés) donne une carte nettement plus propre. La troisième image est
+la meilleure version obtenue à l'époque, présentée dans le support de TIPE :
 
 ![Carte de disparité (maison)](results/disparity_map.png)
 ![Carte de disparité (OpenCV)](results/disparity_map_opencv.png)
+![Carte de disparité (meilleure version, issue de la présentation)](results/disparity_map_presentation.png)
 
 ## Installation
 
