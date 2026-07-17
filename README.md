@@ -49,40 +49,30 @@ pixel), avec une version parallélisée sur plusieurs threads, comparée à `cv2
 
 ## IV. Résultats et comparaisons
 
-Sur la paire `data/left.jpg` / `data/right.jpg` (606×700) : 3890 points appariés par SIFT+FLANN,
-dont 3081 conservés comme inliers par le RANSAC maison. Les matrices fondamentales obtenues par
-l'implémentation maison et par `cv2.findFundamentalMat`, normalisées par leur plus grand
-coefficient, coïncident :
+Images issues du support de présentation du TIPE, sur la paire `data/left.jpg` / `data/right.jpg`.
 
-```
-F (maison)           F (OpenCV)
- 0   0  0              0   0  0
- 0   0 -1              0   0 -1
- 0   1  0              0   1  0
-```
+**Réalisé avec ce dépôt** (implémentation maison — algorithme à 8 points, RANSAC, block matching) :
 
-Cette forme quasi antisymétrique (un seul coefficient significatif hors diagonale) est cohérente
-avec une paire d'images liées par une translation caméra essentiellement horizontale.
-
-Lignes épipolaires avant rectification (elles convergent vers l'épipole) et après rectification
-(elles deviennent horizontales, ce qui valide la rectification) :
+Lignes épipolaires avant rectification (elles convergent vers l'épipole, en bas à gauche) puis
+après rectification (elles deviennent horizontales, ce qui valide la rectification) :
 
 ![Lignes épipolaires avant rectification](results/epilines_before.png)
 ![Lignes épipolaires après rectification](results/epilines_after.png)
 
-Paire d'images rectifiées :
+Image rectifiée :
 
 ![Rectifiée gauche](results/rectified_left.png)
-![Rectifiée droite](results/rectified_right.png)
 
-Carte de disparité : implémentation maison (SAD) contre `cv2.StereoBM`. L'implémentation maison
-retrouve la silhouette de la plante mais reste bruitée et peu contrastée ; `StereoBM` (filtrage et
-gestion des occlusions plus avancés) donne une carte nettement plus propre. La troisième image est
-la meilleure version obtenue à l'époque, présentée dans le support de TIPE :
+Carte de disparité (meilleure version obtenue) :
 
 ![Carte de disparité (maison)](results/disparity_map.png)
+
+**Obtenu avec OpenCV** (référence de comparaison, `cv2.StereoBM`) :
+
+Sur la même paire rectifiée, une carte de disparité nettement plus propre — meilleure gestion des
+occlusions et du bruit que l'implémentation maison ci-dessus :
+
 ![Carte de disparité (OpenCV)](results/disparity_map_opencv.png)
-![Carte de disparité (meilleure version, issue de la présentation)](results/disparity_map_presentation.png)
 
 ## Installation
 
